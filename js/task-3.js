@@ -2,12 +2,12 @@ const nameInput = document.querySelector("#name-input");
 nameInput.addEventListener("input", handlerSubmit);
 
 const nameOutPut = document.querySelector("#name-output");
-nameOutPut.addEventListener("input", handlerSubmit);
 
 function handlerSubmit(event) {
-  console.log(event.target.value);
-  nameOutPut.textContent =
-    event.target.value === "" ? "Anonymous" : event.target.value;
+  const value = event.target.value.trim();
+  console.log(value);
+
+  nameOutPut.textContent = value === "" ? "Anonymous" : value;
 }
 
 nameInput.style.width = "360px";
